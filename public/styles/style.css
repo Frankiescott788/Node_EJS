@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    margin: 20px 0;
+  }
+  
+  .game-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  #card-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(6, 100px);
+    gap: 10px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  
+  .card.flip .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+  }
+  
+  .card-front {
+    background-color: #3498db;
+  }
+  
+  .card-back {
+    background-color: #2ecc71;
+    transform: rotateY(180deg);
+  }
+  
+  /* Pop-up styling */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  #reset-btn {
+    margin-top: 20px;
+  }
+  
